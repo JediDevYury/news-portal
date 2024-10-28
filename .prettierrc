@@ -1,0 +1,14 @@
+{
+  "singleQuote": false,
+  "plugins": [
+    "@trivago/prettier-plugin-sort-imports"
+  ],
+  "importOrder": [
+    "^@?react(.*)$",
+    "^react-native(.*)$",
+    "^@?expo(.*)$",
+    "^@/assets/(.*)$",
+    "^[./]"
+  ],
+  "importOrderSeparation": true
+}
