@@ -85,8 +85,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        PrimaryMedium: ["PrimaryMedium", "sans-serif"],
-        PrimaryText: ["PrimaryText", "sans-serif"],
+        EtelkaMedium: ["EtelkaMedium"],
+        EtelkaText: ["EtelkaText"],
       },
       fontWeight: {
         extrablack: "950",
