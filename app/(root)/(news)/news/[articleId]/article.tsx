@@ -7,7 +7,7 @@ export default function NewsArticle() {
 
   return (
     <View className="justify-center items-center h-full">
-      <Text>Article: {articleId}</Text>
+      <Text>{`Article: ${articleId}`}</Text>
     </View>
   );
 }

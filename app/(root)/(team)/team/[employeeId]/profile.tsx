@@ -1,4 +1,4 @@
-import { View, Text } from "react-native";
+import { Text, View } from "react-native";
 
 import { useLocalSearchParams } from "expo-router";
 
@@ -7,7 +7,7 @@ export default function EmployeeProfile() {
 
   return (
     <View className="justify-center items-center h-full">
-      <Text>Employee: {employeeId}</Text>
+      <Text>{`Employee: ${employeeId}`}</Text>
     </View>
   );
 }

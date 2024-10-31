@@ -7,7 +7,7 @@ export default function EditNewsArticle() {
 
   return (
     <View>
-      <Text>Edit News Article: {id}</Text>
+      <Text>{`Edit News Article: ${id}`}</Text>
     </View>
   );
 }
