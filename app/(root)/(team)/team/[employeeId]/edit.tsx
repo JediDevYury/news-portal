@@ -7,7 +7,7 @@ export default function EditEmployeeProfile() {
 
   return (
     <View className="justify-center items-center h-full">
-      <Text>{`Employee: {employeeId}`}</Text>
+      <Text>{`Employee: ${employeeId}`}</Text>
     </View>
   );
 }
