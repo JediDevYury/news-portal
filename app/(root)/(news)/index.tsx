@@ -1,8 +1,9 @@
-import Fab from "@/components/ui/fab";
+import { Container } from "@/components/ui/container";
+import { Fab } from "@/components/ui/fab";
 import { useUserStore } from "@/store/userStore";
 import { checkRole } from "@/utils";
 
-import { FlatList, Pressable, StyleSheet, Text, View } from "react-native";
+import { FlatList, Pressable, StyleSheet, Text } from "react-native";
 
 import { useRouter } from "expo-router";
 
@@ -26,9 +27,9 @@ const Article = (props: ArticleProps) => {
         router.push(`/news/${props.id}/edit`);
       }}
     >
-      <View className="justify-center items-center">
+      <Container padding={"small"}>
         <Text>{props.title}</Text>
-      </View>
+      </Container>
     </Pressable>
   );
 };

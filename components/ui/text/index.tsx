@@ -11,12 +11,12 @@ interface CustomTextProps extends TextProps {
   active?: boolean;
 }
 
-export default function Text({
+export const Text = ({
   variant,
   style,
   active = false,
   ...props
-}: CustomTextProps) {
+}: CustomTextProps) => {
   const textStyle = typography[variant];
 
   return (
@@ -28,4 +28,4 @@ export default function Text({
       {...props}
     />
   );
-}
+};

@@ -1,6 +1,7 @@
-import { Button, ButtonText } from "@/components/ui/button";
+import { Container } from "@/components/ui/container";
+import { Text } from "@/components/ui/text";
 
-import { Text, View } from "react-native";
+import { Pressable } from "react-native";
 
 import { useRouter } from "expo-router";
 
@@ -12,19 +13,16 @@ export default function SignUp() {
   };
 
   return (
-    <View className="flex justify-center items-center h-full">
-      <Text>Registration</Text>
-      <Button size="md" variant="solid" action="primary" onPress={signUp}>
-        <ButtonText>Sign Up</ButtonText>
-      </Button>
-      <Button
-        size="md"
-        variant="solid"
-        action="primary"
-        onPress={() => router.replace("/(auth)/sign-in")}
+    <Container>
+      <Text variant="body">Registration</Text>
+      <Pressable
+        onPress={() => {
+          signUp();
+          router.push("/(auth)");
+        }}
       >
-        <ButtonText>Sign In</ButtonText>
-      </Button>
-    </View>
+        <Text variant="body">Move to sign in</Text>
+      </Pressable>
+    </Container>
   );
 }

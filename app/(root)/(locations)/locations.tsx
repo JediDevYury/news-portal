@@ -1,4 +1,6 @@
-import { FlatList, Pressable, StyleSheet, Text, View } from "react-native";
+import { Container } from "@/components/ui/container";
+
+import { FlatList, Pressable, StyleSheet, Text } from "react-native";
 
 type LocationProps = {
   id: number;
@@ -7,10 +9,10 @@ type LocationProps = {
 
 const Location = (props: LocationProps) => {
   return (
-    <Pressable className="h-full py-4 px-4">
-      <View className="justify-center items-center">
+    <Pressable className="p-4">
+      <Container padding="small">
         <Text>{props.title}</Text>
-      </View>
+      </Container>
     </Pressable>
   );
 };

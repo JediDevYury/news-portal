@@ -10,7 +10,7 @@ type FabProps = {
   href: Href;
 };
 
-export default function Fab(props: FabProps) {
+export const Fab = (props: FabProps) => {
   return (
     <Link href={props.href} asChild>
       <Pressable hitSlop={20} className="absolute bottom-2 right-2 self-center">
@@ -20,4 +20,4 @@ export default function Fab(props: FabProps) {
       </Pressable>
     </Link>
   );
-}
+};

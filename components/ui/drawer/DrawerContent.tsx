@@ -1,6 +1,6 @@
 import { DrawerItems } from "@/components/ui/drawer/DrawerItems";
 import { MenuIcon } from "@/components/ui/menu-icon";
-import Text from "@/components/ui/text";
+import { Text } from "@/components/ui/text";
 import { useUserStore } from "@/store/userStore";
 import { Roles } from "@/types";
 

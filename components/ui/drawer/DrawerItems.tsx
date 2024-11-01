@@ -1,5 +1,5 @@
 import { MenuIcon } from "@/components/ui/menu-icon";
-import Text from "@/components/ui/text";
+import { Text } from "@/components/ui/text";
 import { clsx } from "clsx";
 
 import { DrawerDescriptorMap } from "@react-navigation/drawer/src/types";
