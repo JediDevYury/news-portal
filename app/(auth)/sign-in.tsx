@@ -17,10 +17,16 @@ export default function SignIn() {
 
   return (
     <Container className="items-center">
-      <Text variant="body">Login</Text>
+      <Pressable
+        onPress={login}
+        className="mb-[4] py-[4] px-[8] border-2 border-brand-100 bg-brand-100 rounded"
+      >
+        <Text variant="body" className={"text-white"}>
+          Login
+        </Text>
+      </Pressable>
       <Pressable
         onPress={() => {
-          login();
           router.push("/(auth)/sign-up");
         }}
       >
