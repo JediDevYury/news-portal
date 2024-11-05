@@ -5,8 +5,8 @@
   "scripts": {
     "start": "expo start --clear",
     "reset-project": "node ./scripts/reset-project.js",
-    "android": "expo run:android",
-    "ios": "expo run:ios",
+    "android": "expo run:android --port 8082",
+    "ios": "expo run:ios --port 8081",
     "web": "DARK_MODE=media expo start --web",
     "test": "jest --watchAll",
     "lint": "expo lint",
