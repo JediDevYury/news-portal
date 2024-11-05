@@ -41,6 +41,12 @@ export const typography = {
     lineHeight: 24,
     letterSpacing: 0,
   },
+  h6Medium: {
+    fontFamily: "EtelkaMedium",
+    fontSize: 18,
+    lineHeight: 24,
+    letterSpacing: 0,
+  },
   subtitle1: {
     fontFamily: "EtelkaText",
     fontSize: 16,
