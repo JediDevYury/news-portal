@@ -1,9 +1,9 @@
 import { FontLoader } from "@/components/ui/font-loader";
 import { GluestackUIProvider } from "@/components/ui/gluestack-ui-provider";
-import { Loader } from "@/components/ui/loader";
 import "@/global.css";
+import { checkPlatform } from "@/utils";
 
-import { Suspense } from "react";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 import { SplashScreen, Stack } from "expo-router";
 
@@ -11,7 +11,11 @@ SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   return (
-    <Suspense fallback={<Loader />}>
+    <>
+      <SafeAreaView
+        className="bg-secondary-100"
+        edges={checkPlatform().isAndroid ? [] : ["top"]}
+      />
       <FontLoader>
         <GluestackUIProvider mode={"light"}>
           <Stack>
@@ -38,6 +42,6 @@ export default function RootLayout() {
           </Stack>
         </GluestackUIProvider>
       </FontLoader>
-    </Suspense>
+    </>
   );
 }
