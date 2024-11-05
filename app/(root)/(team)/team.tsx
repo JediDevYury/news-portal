@@ -52,7 +52,7 @@ export default function Team() {
   return (
     <FlatList
       data={data}
-      className="flex-1 bg-secondary-50"
+      className="flex-1 bg-white"
       contentContainerStyle={styles.contentContainer}
       keyExtractor={(item) => item.id.toString()}
       renderItem={({ item }) => <EmployeeProfile {...item} />}
