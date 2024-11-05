@@ -1,5 +1,6 @@
 import { Container } from "@/components/ui/container";
 import { Fab } from "@/components/ui/fab";
+import { colors } from "@/constants";
 import { useUserStore } from "@/store/userStore";
 import { checkRole } from "@/utils";
 
@@ -56,8 +57,7 @@ export default function News() {
     <>
       <FlatList
         data={data}
-        className="flex-1 bg-secondary-50"
-        contentContainerStyle={styles.contentContainer}
+        style={styles.container}
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => <Article {...item} />}
         numColumns={3}
@@ -68,7 +68,9 @@ export default function News() {
 }
 
 const styles = StyleSheet.create({
-  contentContainer: {
-    padding: 12,
+  container: {
+    flex: 1,
+    padding: 0,
+    backgroundColor: colors.white,
   },
 });

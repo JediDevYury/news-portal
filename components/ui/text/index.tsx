@@ -15,13 +15,14 @@ export const Text = ({
   variant,
   style,
   active = false,
+  className,
   ...props
 }: CustomTextProps) => {
   const textStyle = typography[variant];
 
   return (
     <RNText
-      className={clsx({
+      className={clsx(className, {
         "text-brand-100": active,
       })}
       style={[textStyle, style]}
