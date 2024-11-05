@@ -5,3 +5,5 @@ export * from "./search";
 export * from "./menu";
 export * from "./plus";
 export * from "./logout";
+export * from "./close";
+export * from "./arrow-back";
