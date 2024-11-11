@@ -7,3 +7,5 @@ export * from "./plus";
 export * from "./logout";
 export * from "./close";
 export * from "./arrow-back";
+export * from "./upload";
+export * from "./key";
