@@ -34,8 +34,6 @@ const Article = (props: ArticleProps) => {
 };
 
 export default function News() {
-  const { role } = useUserStore();
-
   const data = [
     {
       id: 1,
