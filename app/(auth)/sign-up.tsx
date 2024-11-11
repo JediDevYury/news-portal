@@ -1,7 +1,9 @@
+import { Button, ButtonText } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
-import { Text } from "@/components/ui/text";
+import { CustomLink } from "@/components/ui/link";
+import { typography } from "@/constants";
 
-import { Pressable } from "react-native";
+import React from "react";
 
 import { useRouter } from "expo-router";
 
@@ -9,26 +11,18 @@ export default function SignUp() {
   const router = useRouter();
 
   const signUp = () => {
-    console.warn("Sign up...");
+    router.push("/(auth)/sign-in");
   };
 
   return (
     <Container>
-      <Pressable
-        onPress={signUp}
-        className="mb-[4] py-[4] px-[8] border-2 border-brand-100 bg-brand-100 rounded"
-      >
-        <Text variant="body" className={"text-white"}>
-          Registration
-        </Text>
-      </Pressable>
-      <Pressable
-        onPress={() => {
-          router.push("/(auth)");
-        }}
-      >
-        <Text variant="body">Move to sign in</Text>
-      </Pressable>
+      <Button size="md" className="w-1/2 my-4" onPress={signUp}>
+        <ButtonText style={[typography.buttonMedium]}>{"Sign Up"}</ButtonText>
+      </Button>
+
+      <CustomLink style={[typography.buttonLink]} href="/(auth)/sign-in">
+        Move to Sign In
+      </CustomLink>
     </Container>
   );
 }

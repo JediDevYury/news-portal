@@ -1,8 +1,10 @@
+import { Button, ButtonText } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
-import { Text } from "@/components/ui/text";
+import { CustomLink } from "@/components/ui/link";
+import { typography } from "@/constants";
 import { useUserStore } from "@/store/userStore";
 
-import { Pressable } from "react-native";
+import React from "react";
 
 import { useRouter } from "expo-router";
 
@@ -17,21 +19,13 @@ export default function SignIn() {
 
   return (
     <Container className="items-center">
-      <Pressable
-        onPress={login}
-        className="mb-[4] py-[4] px-[8] border-2 border-brand-100 bg-brand-100 rounded"
-      >
-        <Text variant="body" className={"text-white"}>
-          Login
-        </Text>
-      </Pressable>
-      <Pressable
-        onPress={() => {
-          router.push("/(auth)/sign-up");
-        }}
-      >
-        <Text variant="body">Move to Sign Up</Text>
-      </Pressable>
+      <Button size="md" className="w-1/2 my-4" onPress={login}>
+        <ButtonText style={[typography.buttonMedium]}>{"Login"}</ButtonText>
+      </Button>
+
+      <CustomLink style={[typography.buttonLink]} href="/(auth)/sign-up">
+        Move to Sign Up
+      </CustomLink>
     </Container>
   );
 }
