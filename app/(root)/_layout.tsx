@@ -37,7 +37,9 @@ export default function Layout() {
           options={{
             drawerLabel: "News",
             title: "News",
-            sceneContainerStyle: { backgroundColor: colors.white },
+            sceneContainerStyle: {
+              backgroundColor: colors.secondary["50"],
+            },
           }}
         />
         <Drawer.Screen

@@ -1,6 +1,4 @@
 import { Container } from "@/components/ui/container";
-import { Fab } from "@/components/ui/fab";
-import { colors } from "@/constants";
 import { useUserStore } from "@/store/userStore";
 import { checkRole } from "@/utils";
 
@@ -62,7 +60,6 @@ export default function News() {
         renderItem={({ item }) => <Article {...item} />}
         numColumns={3}
       />
-      {checkRole(role).isAdmin && <Fab href="/create-article" />}
     </>
   );
 }
@@ -71,6 +68,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 0,
-    backgroundColor: colors.white,
+    backgroundColor: "white",
   },
 });
