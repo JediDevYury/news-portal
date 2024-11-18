@@ -28,11 +28,13 @@ export function DrawerContent(props: DrawerContentComponentProps) {
     <DrawerContentScrollView {...props} style={styles.container}>
       <View className="border-secondary-100 border-b p-4 flex flex-row justify-between items-center">
         <View className="flex flex-row items-center gap-4">
-          <Image
-            source={require("@/assets/images/avatar.png")}
-            className="w-12 h-12 border border-secondary-100 aspect-square"
-            resizeMode={"contain"}
-          />
+          <Pressable onPress={() => router.navigate("/user-profile")}>
+            <Image
+              source={require("@/assets/images/avatar.png")}
+              className="w-12 h-12 border border-secondary-100 aspect-square"
+              resizeMode={"contain"}
+            />
+          </Pressable>
           <View>
             <Text className="text-brand-600 gap-1" variant="h6">
               User Name

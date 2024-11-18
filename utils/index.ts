@@ -1,2 +1,2 @@
-export { checkRole } from "./user/checkRole";
-export { checkPlatform } from "./checkPlatform";
+export { platform } from "./platform";
+export { useCheckRole } from "./hooks/useCheckRole";

@@ -22,5 +22,8 @@ web-build/
 android
 ios
 
+# ignore .env file in the root of your project
+.env
+
 expo-env.d.ts
 # @end expo-cli

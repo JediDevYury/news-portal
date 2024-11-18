@@ -35,7 +35,7 @@ const LoaderIcon = (props: SvgProps) => {
   return (
     <AnimatedSvg fill="none" {...props} style={animatedStyle}>
       <Path
-        fill="#000"
+        fill={props.color}
         d="M32 5.833a26.666 26.666 0 1 0 0 53.333 26.666 26.666 0 0 0 0-53.333Zm0 48a21.333 21.333 0 1 1 0-42.666 21.333 21.333 0 0 1 0 42.666Z"
         opacity={0.5}
       />

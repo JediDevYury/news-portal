@@ -38,10 +38,33 @@
             "./assets/fonts/EtelkaText.otf"
           ]
         }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "networkInspector": true
+          },
+          "ios": {
+            "networkInspector": true
+          }
+        }
       ]
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "jsEngine": "hermes",
+    "extra": {
+      "eas": {
+        "projectId": "080e9636-1b68-4216-a557-be424eb83b0c"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/080e9636-1b68-4216-a557-be424eb83b0c"
     }
   }
 }

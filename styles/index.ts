@@ -1,5 +1,10 @@
 import { cva } from "class-variance-authority";
 
+export type ContainerVariants = {
+  padding: "default" | "small" | "medium" | "large";
+  background: "primary" | "secondary" | "white";
+};
+
 export const containerStyles = cva("flex-1 justify-center items-center", {
   variants: {
     padding: {

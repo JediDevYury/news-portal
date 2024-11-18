@@ -1,6 +1,6 @@
 import { Text } from "@/components/ui/text";
 import { colors, ICON_SIZE, typography } from "@/constants";
-import { checkPlatform } from "@/utils";
+import { platform } from "@/utils/platform";
 
 import { DrawerHeaderProps } from "@react-navigation/drawer";
 import { DrawerActions } from "@react-navigation/native";
@@ -115,7 +115,7 @@ const HeaderBar = (props: Props) => {
           className="relative px-[58] w-full justify-center"
           style={[styles.animatedContainer, titleBoxStyle]}
         >
-          {!checkPlatform().isIOS && (
+          {!platform.isIOS && (
             <Pressable
               style={styles.iconLeftStyle}
               onPress={() => {

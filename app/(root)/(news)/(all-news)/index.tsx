@@ -1,19 +1,39 @@
 import { Container } from "@/components/ui/container";
 import { useUserStore } from "@/store/userStore";
-import { checkRole } from "@/utils";
+import { useCheckRole } from "@/utils";
 
 import { FlatList, Pressable, StyleSheet, Text } from "react-native";
 
 import { useRouter } from "expo-router";
+
+if (__DEV__) {
+  require("@/ReactotronConfig");
+}
 
 type ArticleProps = {
   id: number;
   title: string;
 };
 
+const news = [
+  {
+    id: 1,
+    title: "Article 1",
+  },
+  {
+    id: 2,
+    title: "Article 2",
+  },
+  {
+    id: 3,
+    title: "Article 3",
+  },
+];
+
 const Article = (props: ArticleProps) => {
   const router = useRouter();
   const { role } = useUserStore();
+  const { isAdmin } = useCheckRole(role);
 
   return (
     <Pressable
@@ -22,7 +42,7 @@ const Article = (props: ArticleProps) => {
         router.push(`/news/${props.id}/article`);
       }}
       onLongPress={() => {
-        if (!checkRole(role).isAdmin) return;
+        if (!isAdmin) return;
         router.push(`/news/${props.id}/edit`);
       }}
     >
@@ -34,31 +54,14 @@ const Article = (props: ArticleProps) => {
 };
 
 export default function News() {
-  const data = [
-    {
-      id: 1,
-      title: "Article 1",
-    },
-    {
-      id: 2,
-      title: "Article 2",
-    },
-    {
-      id: 3,
-      title: "Article 3",
-    },
-  ];
-
   return (
-    <>
-      <FlatList
-        data={data}
-        style={styles.container}
-        keyExtractor={(item) => item.id.toString()}
-        renderItem={({ item }) => <Article {...item} />}
-        numColumns={3}
-      />
-    </>
+    <FlatList
+      data={news}
+      style={styles.container}
+      keyExtractor={(item) => item.id.toString()}
+      renderItem={({ item }) => <Article {...item} />}
+      numColumns={3}
+    />
   );
 }
 

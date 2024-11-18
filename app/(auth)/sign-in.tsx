@@ -22,7 +22,6 @@ export default function SignIn() {
       <Button size="md" className="w-1/2 my-4" onPress={login}>
         <ButtonText style={[typography.buttonMedium]}>{"Login"}</ButtonText>
       </Button>
-
       <CustomLink style={[typography.buttonLink]} href="/(auth)/sign-up">
         Move to Sign Up
       </CustomLink>
