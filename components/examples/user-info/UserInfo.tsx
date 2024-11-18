@@ -1,4 +1,3 @@
-// src/App.tsx
 import { RepositoryIssue } from "@/components/examples/repository-issue/RepositoryIssue";
 import { Container } from "@/components/ui/container";
 import { Loader } from "@/components/ui/loader";
@@ -9,7 +8,6 @@ import { useQuery } from "@apollo/client";
 import React from "react";
 import { Image, StyleSheet } from "react-native";
 
-// Define TypeScript types for the query data
 interface UserInfoData {
   viewer: {
     login: string;
@@ -19,13 +17,10 @@ interface UserInfoData {
   };
 }
 
-interface UserInfoVars {}
+const ISSUE_NUMBER = 1;
 
-// Component to display the hooks info
 export const UserInfo = () => {
-  const { loading, error, data } = useQuery<UserInfoData, UserInfoVars>(
-    GET_USER_INFO,
-  );
+  const { loading, error, data } = useQuery<UserInfoData, {}>(GET_USER_INFO);
 
   if (loading) return <Loader background={"primary"} color="black" />;
 
@@ -42,9 +37,9 @@ export const UserInfo = () => {
         {bio}
       </Text>
       <RepositoryIssue
-        name={"education-redux"}
-        owner={"charleswein"}
-        issue={1}
+        name="education-redux"
+        owner="charleswein"
+        issue={ISSUE_NUMBER}
       />
     </Container>
   );
