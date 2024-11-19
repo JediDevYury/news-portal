@@ -1,8 +1,8 @@
 import { Container } from "@/components/ui/container";
 import { useUserStore } from "@/store/userStore";
-import { checkRole } from "@/utils";
+import { useCheckRole } from "@/utils";
 
-import { FlatList, Pressable, StyleSheet, Text } from "react-native";
+import { FlatList, Pressable, Text } from "react-native";
 
 import { useRouter } from "expo-router";
 
@@ -11,9 +11,25 @@ type EmployeeProfileProps = {
   title: string;
 };
 
+const team = [
+  {
+    id: 1,
+    title: "Employee 1",
+  },
+  {
+    id: 2,
+    title: "Employee 2",
+  },
+  {
+    id: 3,
+    title: "Employee 2",
+  },
+];
+
 const EmployeeProfile = (props: EmployeeProfileProps) => {
   const router = useRouter();
   const { role } = useUserStore();
+  const { isAdmin } = useCheckRole(role);
 
   return (
     <Pressable
@@ -22,7 +38,7 @@ const EmployeeProfile = (props: EmployeeProfileProps) => {
         router.push(`/team/${props.id}/profile`);
       }}
       onLongPress={() => {
-        if (!checkRole(role).isAdmin) return;
+        if (!isAdmin) return;
         router.push(`/team/${props.id}/edit`);
       }}
     >
@@ -34,35 +50,14 @@ const EmployeeProfile = (props: EmployeeProfileProps) => {
 };
 
 export default function Team() {
-  const data = [
-    {
-      id: 1,
-      title: "Employee 1",
-    },
-    {
-      id: 2,
-      title: "Employee 2",
-    },
-    {
-      id: 3,
-      title: "Employee 2",
-    },
-  ];
-
   return (
     <FlatList
-      data={data}
+      data={team}
       className="flex-1 bg-white"
-      contentContainerStyle={styles.contentContainer}
+      contentContainerClassName="p-4"
       keyExtractor={(item) => item.id.toString()}
       renderItem={({ item }) => <EmployeeProfile {...item} />}
       numColumns={3}
     />
   );
 }
-
-const styles = StyleSheet.create({
-  contentContainer: {
-    padding: 12,
-  },
-});

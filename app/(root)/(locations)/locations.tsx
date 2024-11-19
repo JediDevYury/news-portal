@@ -1,11 +1,26 @@
 import { Container } from "@/components/ui/container";
 
-import { FlatList, Pressable, StyleSheet, Text } from "react-native";
+import { FlatList, Pressable, Text } from "react-native";
 
 type LocationProps = {
   id: number;
   title: string;
 };
+
+const locations = [
+  {
+    id: 1,
+    title: "Location 1",
+  },
+  {
+    id: 2,
+    title: "Location 2",
+  },
+  {
+    id: 3,
+    title: "Location 2",
+  },
+];
 
 const Location = (props: LocationProps) => {
   return (
@@ -18,35 +33,14 @@ const Location = (props: LocationProps) => {
 };
 
 export default function Locations() {
-  const data = [
-    {
-      id: 1,
-      title: "Location 1",
-    },
-    {
-      id: 2,
-      title: "Location 2",
-    },
-    {
-      id: 3,
-      title: "Location 2",
-    },
-  ];
-
   return (
     <FlatList
-      data={data}
+      data={locations}
       className="flex-1 bg-white"
-      contentContainerStyle={styles.contentContainer}
+      contentContainerClassName={"p-[12]"}
       keyExtractor={(item) => item.id.toString()}
       renderItem={({ item }) => <Location {...item} />}
       numColumns={3}
     />
   );
 }
-
-const styles = StyleSheet.create({
-  contentContainer: {
-    padding: 12,
-  },
-});

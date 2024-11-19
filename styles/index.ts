@@ -1,5 +1,10 @@
 import { cva } from "class-variance-authority";
 
+export type ContainerVariants = {
+  padding: "default" | "small" | "medium" | "large";
+  background: "primary" | "secondary" | "white";
+};
+
 export const containerStyles = cva("flex-1 justify-center items-center", {
   variants: {
     padding: {
@@ -19,25 +24,3 @@ export const containerStyles = cva("flex-1 justify-center items-center", {
     background: "primary",
   },
 });
-
-// Create the button styles using tva
-const buttonStyles = cva("", {
-  variants: {
-    size: {
-      small: "px-2 py-1",
-      medium: "px-2 py-1",
-      large: "px-6 py-3",
-    },
-    variant: {
-      primary: "bg-brand-100",
-      secondary: "bg-brand-200",
-      outline: "border border-gray-500",
-    },
-  },
-  defaultVariants: {
-    size: "medium",
-    variant: "primary",
-  },
-});
-
-export default buttonStyles;
