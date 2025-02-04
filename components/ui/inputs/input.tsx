@@ -24,6 +24,8 @@ const InputWrapper = React.forwardRef<
   return <View {...props} ref={ref} />;
 });
 
+InputWrapper.displayName = "InputWrapper";
+
 const UIInput = createInput({
   // @ts-ignore
   Root:
