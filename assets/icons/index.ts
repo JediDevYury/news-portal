@@ -9,3 +9,5 @@ export * from "./close";
 export * from "./arrow-back";
 export * from "./upload";
 export * from "./key";
+export * from "./email-outline";
+export * from "./user";
