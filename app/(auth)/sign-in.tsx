@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
 
 export default function SignIn() {
   const router = useRouter();
-  const { setIsAuthenticatedUser, user } = useUserStore();
+  const { setIsAuthenticatedUser } = useUserStore();
 
   const defaultValues = useMemo(
     () => ({
