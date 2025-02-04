@@ -1,6 +1,6 @@
 import { Button, ButtonText } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
-import { Input, InputField, InputSlot } from "@/components/ui/input";
+import { Input, InputField, InputSlot } from "@/components/ui/inputs/input";
 import { Loader } from "@/components/ui/loader";
 import { Text } from "@/components/ui/text";
 import { colors, typography } from "@/constants";
