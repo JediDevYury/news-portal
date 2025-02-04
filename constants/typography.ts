@@ -25,6 +25,12 @@ export const typography = {
     lineHeight: 28,
     letterSpacing: 0,
   },
+  h4Medium: {
+    fontFamily: "EtelkaMedium",
+    fontSize: dpToSp(24),
+    lineHeight: 28,
+    letterSpacing: 0,
+  },
   h5: {
     fontFamily: "EtelkaText",
     fontSize: dpToSp(20),
