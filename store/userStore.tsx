@@ -4,7 +4,15 @@ import { createJSONStorage, persist } from "zustand/middleware";
 
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
+type User = {
+  email: string;
+  password: string;
+  firstName?: string;
+  lastName?: string;
+} | null;
+
 type UserStore = {
+  user: User;
   role: Roles;
   isAuthenticatedUser: boolean;
   setIsAuthenticatedUser: (isAuthenticated: boolean) => void;
@@ -13,6 +21,7 @@ type UserStore = {
 export const useUserStore = create(
   persist<UserStore>(
     (set) => ({
+      user: null,
       role: Roles.USER,
       isAuthenticatedUser: false,
       setIsAuthenticatedUser: (isAuthenticated: boolean) =>

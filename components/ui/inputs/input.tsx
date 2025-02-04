@@ -9,19 +9,22 @@ import {
 import { withStyleContextAndStates } from "@gluestack-ui/nativewind-utils/withStyleContextAndStates";
 import { cssInterop } from "nativewind";
 
-import React from "react";
+import React, { type ComponentProps, type ElementRef } from "react";
 import { Platform, Pressable, TextInput, View } from "react-native";
 
 import { PrimitiveIcon } from "../primitive-icon";
+import { InputLabel } from "./input-label";
 
 const SCOPE = "INPUT";
 
 const InputWrapper = React.forwardRef<
-  React.ElementRef<typeof View>,
-  React.ComponentProps<typeof View>
+  ElementRef<typeof View>,
+  ComponentProps<typeof View>
 >(({ ...props }, ref) => {
   return <View {...props} ref={ref} />;
 });
+
+InputWrapper.displayName = "InputWrapper";
 
 const UIInput = createInput({
   // @ts-ignore
@@ -44,6 +47,7 @@ const inputStyle = tva({
       sm: "h-9",
     },
     variant: {
+      error: "rounded border border-danger-300",
       underlined:
         "rounded-none border-b data-[invalid=true]:border-b-2 data-[invalid=true]:border-error-700 data-[invalid=true]:hover:border-error-700 data-[invalid=true]:data-[focus=true]:border-error-700 data-[invalid=true]:data-[focus=true]:hover:border-error-700 data-[invalid=true]:data-[disabled=true]:hover:border-error-700",
       outline:
@@ -76,6 +80,7 @@ const inputFieldStyle = tva({
   base: "flex-1 text-typography-900 py-auto px-3 placeholder:text-typography-500 h-full ios:leading-[0px] web:cursor-text web:data-[disabled=true]:cursor-not-allowed",
   parentVariants: {
     variant: {
+      error: "",
       underlined: "web:outline-0 web:outline-none px-0",
       outline: "web:outline-0 web:outline-none",
       rounded: "web:outline-0 web:outline-none px-4",
@@ -222,4 +227,4 @@ InputIcon.displayName = "InputIcon";
 InputSlot.displayName = "InputSlot";
 InputField.displayName = "InputField";
 
-export { Input, InputField, InputIcon, InputSlot };
+export { Input, InputField, InputIcon, InputSlot, InputLabel };
